@@ -6,7 +6,7 @@
 .DATA
 
 MSG1 DB 13,10,"Enter Digit:$"
-MSG2 DB 13,10,"Divided by 4 using SHR:$"
+MSG2 DB 13,10,"Multiplied by 4 using SHL:$"
 
 .CODE
 
@@ -23,9 +23,9 @@ MAIN PROC
     
     SUB AL,30H     
     
-    MOV CL,2       ; 2 shifts so division by 4
+    MOV CL,2       ; 2 shifts so multiplication by 4
     
-    SHR AL,CL 
+    SHL AL,CL 
     
     MOV BL,AL
     
