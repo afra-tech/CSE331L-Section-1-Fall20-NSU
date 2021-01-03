@@ -62,7 +62,7 @@ LINE    DB  13,10,"$"
       OUTPUT LINE
         
       LEA DI,REV 
-      DEC CX
+     
       
       LOOP1: 
       MOV AL,[SI]
