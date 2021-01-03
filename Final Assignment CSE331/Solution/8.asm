@@ -60,37 +60,23 @@ LINE    DB  13,10,"$"
       DEC SI
       OUTPUT STRING 
       OUTPUT LINE
-        
-      LEA DI,REV 
+      
+   
+      LEA DI, STRING
      
-      
-      LOOP1: 
-      MOV AL,[SI]
-      MOV [DI],AL 
-      INC DI 
-      DEC SI
-      loop LOOP1 
-      
-      
-      MOV AL,'$'
-      MOV [DI],AL
-      
-      OUTPUT REV
+   
      
   
     @CHECK: 
-    
-     LEA DI,REV 
-     LEA SI,STRING
-     
-     LOOP2:
-     MOV AL,[SI]  
-     CMP [DI],AL
-     JNE @NOPE
    
-     INC DI
-     INC SI  
-     loop LOOP2
+     MOV AX,[SI] 
+     MOV BX, [DI]  
+     CMP AL, BL 
+     JNE @NOPE 
+  
+     DEC SI 
+     INC DI 
+     loop @CHECK
        
     
     @YEP:  
